@@ -1,0 +1,41 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: traefik-base
+  namespace: traefik-internal
+
+spec:
+  prune: true
+  interval: 30m
+  timeout: 2m
+
+  targetNamespace: traefik-internal
+  path: ./core/traefik/internal/
+
+  patches:
+    - patch: |-
+        - op: replace
+          path: /data/values.yaml
+          value: |-
+            deployment:
+              replicas: 1
+
+            ingressClass:
+              isDefaultClass: false
+
+            additionalArguments:
+              - "--providers.kubernetesingress.ingressclass=traefik-internal"
+
+            service:
+              annotations:
+                metallb.universe.tf/address-pool: private-pool
+
+      target:
+        kind: ConfigMap
+        name: traefik-helm-values
+        namespace: traefik-system
+
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system

@@ -1,0 +1,20 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cm-overlays
+  namespace: cert-manager
+
+spec:
+  prune: true
+  interval: 30m
+  timeout: 2m
+
+  targetNamespace: cert-manager
+  path: ./core/cert-manager/overlays/k1
+  dependsOn:
+    - name: cm-base
+
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
