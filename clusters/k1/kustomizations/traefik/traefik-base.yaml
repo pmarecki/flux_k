@@ -26,7 +26,7 @@ spec:
 
             service:
               enabled: false
-              type: LoadBalancer
+              type: ClusterIPg
               annotations:
                 metallb.universe.tf/address-pool: public-pool
               spec:
