@@ -1,0 +1,31 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: sealed-secrets
+  namespace: sealed-secrets
+
+spec:
+  prune: true
+  interval: 30m
+  timeout: 2m
+
+  targetNamespace: sealed-secrets
+  path: ./core/sealed-secrets/base/
+
+  patches:
+    - patch: |-
+        - op: add
+          path: /data/values.yaml
+          value: |-
+            deployment:
+              replicas: 3
+    - target:
+        kind: ConfigMap
+        name: ss
+        namespace: sealed-secrets
+
+
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
