@@ -26,7 +26,7 @@ spec:
 
             service:
               annotations:
-                metallb.universe.tf/address-pool: public-pool
+                metallb.universe.tf/address-pool: private-pool
             
             providers:
               kubernetesCRD:
