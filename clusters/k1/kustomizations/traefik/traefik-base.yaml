@@ -25,6 +25,8 @@ spec:
 
 
             service:
+              enabled: true
+              type: LoadBalancer
               annotations:
                 metallb.universe.tf/address-pool: public-pool
               spec:
