@@ -19,7 +19,7 @@ spec:
           value: |-
             deployment:
               replicas: 3
-    - target:
+      target:
         kind: ConfigMap
         name: ss
         namespace: sealed-secrets
