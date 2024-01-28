@@ -5,3 +5,4 @@ metadata:
   namespace: sealed-secrets
 data:
   values.yaml: |-
+    zz: 12
