@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: ss
   namespace: sealed-secrets
+  labels:
+    purpose: test
 data:
   values.yaml: |-
     zz: 12
