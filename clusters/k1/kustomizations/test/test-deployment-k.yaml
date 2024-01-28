@@ -15,7 +15,7 @@ spec:
 
   patches:
     - patch: |
-        - op: add
+        - op: replace
           path: /spec
           value:
             replicas: 1
