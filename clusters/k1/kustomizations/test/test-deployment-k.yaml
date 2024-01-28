@@ -13,16 +13,16 @@ spec:
   path: "./core/test/base/"
 
 
-  patches:
-    - patch: |-
-        - op: add
-          path: /spec
-          value: 
-            replicas: 1
-      target:
-        kind: Deployment
-        name: test-nginx
-        namespace: default
+#  patches:
+#    - patch: |-
+#        - op: add
+#          path: /spec
+#          value:
+#            replicas: 1
+#      target:
+#        kind: Deployment
+#        name: test-nginx
+#        namespace: default
 
   sourceRef:
     kind: GitRepository
