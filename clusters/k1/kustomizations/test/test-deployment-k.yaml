@@ -16,9 +16,9 @@ spec:
   patches:
     - patch: |
         - op: replace
-          path: /spec
+          path: /spec/replicas
           value:
-            replicas: 1
+            1
       target:
         kind: Deployment
         name: test-nginx
