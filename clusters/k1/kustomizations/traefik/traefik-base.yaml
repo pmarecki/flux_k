@@ -18,7 +18,7 @@ spec:
           path: /data/values.yaml
           value: |-
             deployment:
-              replicas: 3
+              replicas: 2
         
             additionalArguments:
               - "--providers.kubernetesingress.ingressclass=traefik"
