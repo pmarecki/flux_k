@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-nginx
+  name: test-app
   namespace: default
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: test-deployment
+      app: test-app
 
   template:
     metadata:
       labels:
-        app: test-deployment
+        app: test-app
     spec:
       containers:
-      - name: test-deployment
+      - name: test-app
         image: nginx:1-alpine
         imagePullPolicy: IfNotPresent
         ports:
