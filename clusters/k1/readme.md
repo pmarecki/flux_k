@@ -1,4 +1,4 @@
-# infrastructure for k cluster
+# infrastructure for "k" cluster
 
 - reconcile faster with
 ```

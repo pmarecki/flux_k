@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: test-route
+#  annotations:
+spec:
+#  {{- with .Values.ingressRoute }}
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`khabib.wsi.edu.pl`) || Host(`khabib.wsi.edu.pl`)
+      kind: Rule
+#  {{- end }}
+      services:
+        - name: test-svc
+          port: 80
