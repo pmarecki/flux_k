@@ -17,4 +17,4 @@ spec:
         - name: test-svc
           port: 80
   tls:
-    secretName: test-tls-cert
+    secretName: tls-cert

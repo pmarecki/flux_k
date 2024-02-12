@@ -5,9 +5,11 @@ metadata:
 spec:
 #{{- with .Values.certificate }}
   commonName: "khabib.wsi.edu.pl"  #{{.commonName | quote}}
-  secretName: test-tls-cert
+  secretName: tls-cert
 
-  issuerRef: {{toYaml .issuer | nindent 4}}
+  issuerRef: #{{toYaml .issuer | nindent 4}}
+    name: letsencrypt
+    kind: ClusterIssuer
 
   dnsNames:
     - "khabib.wsi.edu.pl"
