@@ -9,7 +9,7 @@ spec:
     - web
     - websecure
   routes:
-    - match: Host(`khabib.wsi.edu.pl`) || Host(`www.khabib.wsi.edu.pl`)
+    - match: Host(`khabib.wsi.edu.pl`)
       kind: Rule
 
 #  {{- with .Values.app.service }}

@@ -13,7 +13,7 @@ spec:
 
   dnsNames:
     - "khabib.wsi.edu.pl"
-    - "www.khabib.wsi.edu.pl"
+#    - "www.khabib.wsi.edu.pl"
 #  {{- if .dnsNames }}
 #    {{- toYaml .dnsNames | nindent 4}}
 #  {{- else }}
