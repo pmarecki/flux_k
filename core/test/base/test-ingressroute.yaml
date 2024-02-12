@@ -8,7 +8,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`khabib.wsi.edu.pl`) || Host(`khabib.wsi.edu.pl`)
+    - match: Host(`khabib.wsi.edu.pl`) || Host(`www.khabib.wsi.edu.pl`)
       kind: Rule
 #  {{- end }}
       services:
