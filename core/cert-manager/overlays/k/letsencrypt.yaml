@@ -22,4 +22,5 @@ spec:
         selector:
           dnsNames:
             - "khabib.wsi.edu.pl"
+            - "www.khabib.wsi.edu.pl"
 #            - "www.aimachina.io"
