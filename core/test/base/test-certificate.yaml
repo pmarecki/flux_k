@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: {{.Release.Name}}-tls-cert
+  name: test-tls-cert
 spec:
 #{{- with .Values.certificate }}
   commonName: "khabib.wsi.edu.pl"  #{{.commonName | quote}}
