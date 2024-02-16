@@ -1,0 +1,40 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: ceph-base
+  namespace: ceph-csi
+
+spec:
+  prune: true
+  interval: 30m
+  timeout: 2m
+
+  targetNamespace: ceph-csi
+  path: ./core/ceph/base/
+
+  patches:
+    - patch: |-
+        - op: replace
+          path: /data/values.yaml
+          value: |-
+            csiConfig:
+              - clusterID:  30fbfe96-af1c-11ee-b6b2-5254007368e9
+                monitors:
+                  - 192.168.100.201:6789
+                  - 192.168.100.202:6789
+                  - 192.168.100.203:6789
+
+            storageClass:
+              create: true
+              name: ceph-wrong
+              clusterID: 30fbfe96-af1c-11ee-b6b2-5254007368e9
+              pool: wrongk8s
+      target:
+        kind: ConfigMap
+        name: ceph-helm-values
+        namespace: ceph-csi
+
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system

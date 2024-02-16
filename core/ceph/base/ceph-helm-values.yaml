@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ceph-helm-values
+  namespace: ceph-csi
+data:
+  values.yaml: |
+    csiConfig:
+      - clusterID: x
+        monitors:
+          - y
+
+    storageClass:
+      create: true
+      name: ceph-wrong
+      clusterID: aaaaa-bbbbb-ccccc-ddddd
+      pool: xxxxxxxx
