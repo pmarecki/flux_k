@@ -1,0 +1,26 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: headers-middleware
+  namespace: smoke
+spec:
+  headers:
+    accessControlAllowHeaders:
+    - '*'
+    accessControlAllowMethods:
+    - '*'
+
+#    accessControlAllowOriginList:
+#    - https://billings.m87.tech
+#    - http://localhost:3000
+#    - https://billings-red.vercel.app
+#
+#    accessControlAllowOriginListRegex:
+#    - https://billings-(.*?)-m87-technologies\.vercel\.app
+#    - https://billing-(.*?)-m87-technologies\.vercel\.app
+
+    accessControlMaxAge: 3600
+    addVaryHeader: true
+    browserXssFilter: true
+    contentSecurityPolicy: default-src 'none'; report-to csp@khabib.wtf
+    frameDeny: true

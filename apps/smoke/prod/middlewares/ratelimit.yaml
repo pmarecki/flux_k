@@ -1,0 +1,10 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: ratelimit-middleware
+  namespace: billings
+spec:
+  rateLimit:
+    average: 250
+    burst: 100
+    period: "1m"

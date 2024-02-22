@@ -1,0 +1,44 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: smoke-api
+  namespace: smoke
+spec:
+  interval: 15m
+  timeout: 1m
+  chart:
+    spec:
+      chart: app-chart
+      version: 1.0.11
+      sourceRef:
+        kind: HelmRepository
+        name: harbor
+        namespace: flux-system
+  values:
+    app:
+      replicas: 2
+      image:
+        repository: nginx
+        tag: 1-alpine
+      service:
+        targetPort: 80
+    certificate:
+      commonName: "smoke.wsi.edu.pl"
+    ingressRoute:
+      domain: smoke.wsi.edu.pl
+      middlewares:
+        - name: headers-middleware
+        - name: ratelimit-middleware
+#    database:
+#      enabled: true
+#      database: billingsdb
+#      image:
+#        tag: 15.3
+#      storage:
+#        resources:
+#          requests:
+#            storage: 2Gi
+#      backups:
+#        resources:
+#          requests:
+#            storage: 4Gi
