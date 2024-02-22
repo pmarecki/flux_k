@@ -5,7 +5,7 @@ metadata:
   namespace: default
   annotations:
     metallb.universe.tf/address-pool: private-pool
-    metallb.universe.tf/loadBalancerIPs: 192.168.100.240
+    metallb.universe.tf/loadBalancerIPs: 192.168.100.241
 spec:
   selector:
     app: test-pg
