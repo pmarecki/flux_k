@@ -24,6 +24,9 @@ spec:
         targetPort: 80
     certificate:
       commonName: "smoke.wsi.edu.pl"
+      issuer:
+        name: letsencrypt-prod
+        kind: ClusterIssuer
     ingressRoute:
       domain: smoke.wsi.edu.pl
       middlewares:

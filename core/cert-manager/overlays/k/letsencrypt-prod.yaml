@@ -22,3 +22,4 @@ spec:
         selector:
           dnsNames:
             - "khabib.wsi.edu.pl"
+            - "smoke.wsi.edu.pl"
