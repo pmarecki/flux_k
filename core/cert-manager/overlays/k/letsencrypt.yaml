@@ -23,4 +23,5 @@ spec:
           dnsNames:
             - "khabib.wsi.edu.pl"
             - "www.khabib.wsi.edu.pl"
+            - "smoke.wsi.edu.pl"
 #            - "www.aimachina.io"
