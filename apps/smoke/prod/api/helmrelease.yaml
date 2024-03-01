@@ -34,7 +34,7 @@ spec:
         - name: ratelimit-middleware
 #    database:
 #      enabled: true
-#      database: billingsdb
+#      database: smokedb
 #      image:
 #        tag: 15.3
 #      storage:
