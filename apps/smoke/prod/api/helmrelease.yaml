@@ -32,16 +32,18 @@ spec:
       middlewares:
         - name: headers-middleware
         - name: ratelimit-middleware
-#    database:
-#      enabled: true
-#      database: smokedb
-#      image:
-#        tag: 15.3
-#      storage:
-#        resources:
-#          requests:
-#            storage: 2Gi
-#      backups:
-#        resources:
-#          requests:
-#            storage: 4Gi
+    database:
+      enabled: true
+      database: smokedb
+      image:
+        tag: 16-alpine
+      storage:
+        storageClassName: ceph-wrong
+        resources:
+          requests:
+            storage: 256Mi
+      backups:
+        storageClassName: ceph-wrong
+        resources:
+          requests:
+            storage: 256Mi
