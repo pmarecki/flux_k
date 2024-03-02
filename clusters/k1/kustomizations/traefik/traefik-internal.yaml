@@ -26,6 +26,12 @@ spec:
             additionalArguments:
               - "--providers.kubernetesingress.ingressclass=traefik-internal"
 
+            logs:
+              general:
+                level: INFO
+                filePath: "/var/log/traefik.log"
+        
+
             service:
               annotations:
                 metallb.universe.tf/address-pool: private-pool
