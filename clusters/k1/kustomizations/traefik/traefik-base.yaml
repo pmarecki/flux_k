@@ -18,11 +18,10 @@ spec:
           path: /data/values.yaml
           value: |-
             deployment:
-              replicas: 2
+              replicas: 1
         
             additionalArguments:
               - "--providers.kubernetesingress.ingressclass=traefik"
-
 
             service:
               enabled: true
@@ -31,6 +30,11 @@ spec:
                 metallb.universe.tf/address-pool: public-pool
               spec:
                 loadBalancerIP: 192.168.100.245
+        
+            logs:
+              general:
+                level: INFO
+                filePath: "/var/log/traefik.log"
             
             providers:
               kubernetesCRD:
