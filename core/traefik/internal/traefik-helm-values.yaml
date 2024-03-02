@@ -6,4 +6,4 @@ metadata:
 data:
   values.yaml: |
     deployment:
-      replicas: 2
+      replicas: 1
