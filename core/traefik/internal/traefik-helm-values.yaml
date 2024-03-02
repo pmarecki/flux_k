@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: traefik-helm-values
-  namespace: traefik-system
+  namespace: traefik-internal
 data:
   values.yaml: |
     deployment:
