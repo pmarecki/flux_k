@@ -31,10 +31,6 @@ spec:
               spec:
                 loadBalancerIP: 192.168.100.245
         
-            logs:
-              general:
-                level: INFO
-                filePath: "/var/log/traefik.log"
             
             providers:
               kubernetesCRD:
