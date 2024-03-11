@@ -7,10 +7,11 @@ data:
   values.yaml: |
     global:
       storageClass: ceph-wrong
+      kibanaEnabled: true
     master:
       masterOnly: false
       replicaCount: 1
-      heapSize: 800m
+      heapSize: 500m
     coordinating:
       replicaCount: 1
     data:
