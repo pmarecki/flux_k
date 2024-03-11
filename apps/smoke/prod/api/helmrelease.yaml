@@ -44,7 +44,7 @@ spec:
             storage: 256Mi
       backups:
         storageClassName: ceph-wrong
-        schedule: "5,10,15 * * * *"
+        schedule: "0 12 * * *"
         resources:
           requests:
             storage: 256Mi
