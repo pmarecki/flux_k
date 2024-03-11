@@ -7,3 +7,7 @@ data:
   values.yaml: |
     global:
       storageClass: ceph-wrong
+    master:
+      masterOnly: false
+      replicaCount:1
+      heapSize: 800m
