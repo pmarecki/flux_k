@@ -11,3 +11,9 @@ data:
       masterOnly: false
       replicaCount: 1
       heapSize: 800m
+    coordinating:
+      replicaCount: 1
+    data:
+      replicaCount: 1
+    ingest:
+      replicaCount: 1
