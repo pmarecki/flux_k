@@ -12,6 +12,8 @@ data:
       masterOnly: false
       replicaCount: 1
       heapSize: 500m
+      persistence: 
+        storageClass: nfs
     coordinating:
       replicaCount: 1
     data:
