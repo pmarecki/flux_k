@@ -7,4 +7,10 @@ data:
   values.yaml: |
     global:
       storageClass: nfs
-    
+    aggregator:
+      configMap: elasticsearch-output
+      extraEnvVar: 
+        - name: ELASTICSEARCH_HOST
+          value: elastic-elasticsearch.elastic-system
+        - name: ELASTICSEARCH_PORT
+          value: 9200
