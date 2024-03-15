@@ -7,15 +7,4 @@ data:
   values.yaml: |
     global:
       storageClass: nfs
-    master:
-      masterOnly: false
-      replicaCount: 1
-      heapSize: 500m
-      persistence: 
-        storageClass: nfs
-    coordinating:
-      replicaCount: 1
-    data:
-      replicaCount: 1
-    ingest:
-      replicaCount: 1
+    
