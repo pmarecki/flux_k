@@ -53,6 +53,7 @@ data:
     </match>
 
     # Send the logs to the standard output
+    # note: we are using elasticsearch in "elastic-system" namespace
     <match **>
       @type elasticsearch
       include_tag_key true
