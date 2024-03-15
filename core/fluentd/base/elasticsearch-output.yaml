@@ -56,8 +56,8 @@ data:
     <match **>
       @type elasticsearch
       include_tag_key true
-      host "#{ENV['ELASTICSEARCH_HOST']}"
-      port "#{ENV['ELASTICSEARCH_PORT']}"
+      host "elastic-elasticsearch.elastic-system"
+      port 9200
       logstash_format true
 
       <buffer>
