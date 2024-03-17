@@ -62,6 +62,9 @@ data:
       user elastic
       password ts2PwaAo60hPPnEx
       logstash_format true
+    
+      ssl_verify false
+      ssl_version TLSv1_2
 
       <buffer>
         @type file
