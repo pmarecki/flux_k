@@ -7,7 +7,7 @@ data:
   values.yaml: |
     global:
       storageClass: nfs
-      kibanaEnabled: false
+      kibanaEnabled: true
     master:
       masterOnly: false
       replicaCount: 1
