@@ -7,7 +7,19 @@ data:
   values.yaml: |
     global:
       storageClass: nfs
-      kibanaEnabled: true
+      kibanaEnabled: false
+    master:
+      masterOnly: false
+      replicaCount: 1
+      heapSize: 500m
+      persistence: 
+        storageClass: nfs
+    coordinating:
+      replicaCount: 1
+    data:
+      replicaCount: 1
+    ingest:
+      replicaCount: 1
     security:
       enabled: true
       # PASSWORD must be the same value passed to elasticsearch to get an "out of the box" experience
@@ -22,28 +34,23 @@ data:
           auth:
             enabled: true
             # default in the elasticsearch chart is elastic
-            kibanaUsername: "elastic"
-            kibanaPassword: "1234"
+            # kibanaUsername: "elastic"  # removed in 10.0.0 version of kibana chart
+            kibanaPassword: "1234"    # for 'kibana_system' user, used to authenticate Kibana connection with Elastic
+            createSystemUser: true    # Kibana will use Elasticsearch API to create the 'kibana_system' user at startup
+            elasticsearchPasswordSecret: elastic-elasticsearch  #  secret containing the password for the 'elastic' user.
+            #existingSecret: ""       # Name of the existing secret containing the password for the 'kibana_system' user    
+            
           tls:
             # Instruct kibana to connect to elastic over https
             enabled: true
     
             # Bit of a catch 22, as you will need to know the name upfront of your release
-            existingSecret: elastic-elasticsearch-coordinating-crt # or just 'elasticsearch-coordinating-crt' if the release name happens to be 'elasticsearch'
-    
+            # or just 'elasticsearch-coordinating-crt' if the release name happens to be 'elasticsearch'
+            # [OK], exists in ns
+            existingSecret: elastic-elasticsearch-coordinating-crt 
+       
             # As the certs are auto-generated, they are pemCerts so set to true
             usePemCerts: true
           
     
-    master:
-      masterOnly: false
-      replicaCount: 1
-      heapSize: 500m
-      persistence: 
-        storageClass: nfs
-    coordinating:
-      replicaCount: 1
-    data:
-      replicaCount: 1
-    ingest:
-      replicaCount: 1
+

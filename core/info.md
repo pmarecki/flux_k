@@ -1,3 +1,3 @@
-# core dir
-- Contains general technologies used on many clusters.
-- Specifics for particular cluster set by kustomizations in `./cluster/{clustr-name}/kustomizations`
+# core
+- "apps" dir for general/external applications 
+- specifics for particular cluster should be set by kustomizations in `./cluster/{clustr-name}/kustomizations`
