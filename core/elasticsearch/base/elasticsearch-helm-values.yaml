@@ -41,7 +41,7 @@ data:
             # existingSecret: ""       # Name of the existing secret containing the password for the 'kibana_system' user    
             
           tls:
-            # Instruct kibana to connect to elastic over https
+            # Instruct kibana to connect to elastic over https (tls)
             enabled: true
     
             # Bit of a catch 22, as you will need to know the name upfront of your release
