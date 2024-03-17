@@ -21,7 +21,7 @@ data:
     ingest:
       replicaCount: 1
     security:
-      enabled: true
+      enabled: false
       # PASSWORD must be the same value passed to elasticsearch to get an "out of the box" experience
       elasticPassword: "1234"
       tls:
