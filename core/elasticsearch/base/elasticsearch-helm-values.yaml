@@ -33,12 +33,13 @@ data:
         security:
           auth:
             enabled: true
-            # default in the elasticsearch chart is elastic
-            # kibanaUsername: "elastic"  # removed in 10.0.0 version of kibana chart
+    
             kibanaPassword: "1234"    # for 'kibana_system' user, used to authenticate Kibana connection with Elastic
             createSystemUser: true    # Kibana will use Elasticsearch API to create the 'kibana_system' user at startup
             elasticsearchPasswordSecret: elastic-elasticsearch  #  secret containing the password for the 'elastic' user.
-            #existingSecret: ""       # Name of the existing secret containing the password for the 'kibana_system' user    
+    
+            kibanaUsername: "elastic"  # removed in 10.0.0 version of kibana chart
+            # existingSecret: ""       # Name of the existing secret containing the password for the 'kibana_system' user    
             
           tls:
             # Instruct kibana to connect to elastic over https
