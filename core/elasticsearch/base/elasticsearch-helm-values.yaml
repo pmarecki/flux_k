@@ -33,12 +33,11 @@ data:
         security:
           auth:
             enabled: true
-    
-            kibanaPassword: "1234"    # for 'kibana_system' user, used to authenticate Kibana connection with Elastic
             createSystemUser: true    # Kibana will use Elasticsearch API to create the 'kibana_system' user at startup
+            kibanaPassword: "1234"    # for 'kibana_system' user, used to authenticate Kibana connection with Elastic
             elasticsearchPasswordSecret: elastic-elasticsearch  #  secret containing the password for the 'elastic' user.
     
-            kibanaUsername: "elastic"  # removed in 10.0.0 version of kibana chart
+            # kibanaUsername: "elastic"  # removed in 10.0.0 version of kibana chart
             # existingSecret: ""       # Name of the existing secret containing the password for the 'kibana_system' user    
             
           tls:
@@ -48,7 +47,7 @@ data:
             # Bit of a catch 22, as you will need to know the name upfront of your release
             # or just 'elasticsearch-coordinating-crt' if the release name happens to be 'elasticsearch'
             # [OK], exists in ns
-            existingSecret: elastic-elasticsearch-coordinating-crt 
+            existingSecret: elastic-elasticsearch-master-crt
        
             # As the certs are auto-generated, they are pemCerts so set to true
             usePemCerts: true
