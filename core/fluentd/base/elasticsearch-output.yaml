@@ -57,8 +57,10 @@ data:
     <match **>
       @type elasticsearch
       include_tag_key true
-      host "elastic-elasticsearch.elastic-system"
+      host "https://elastic-elasticsearch.elastic-system"
       port 9200
+      user elastic
+      password ts2PwaAo60hPPnEx
       logstash_format true
 
       <buffer>
