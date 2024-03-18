@@ -15,3 +15,8 @@ data:
           value: elastic-elasticsearch.elastic-system
         - name: ELASTICSEARCH_PORT
           value: 9200
+
+
+
+
+
