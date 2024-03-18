@@ -28,10 +28,6 @@ data:
       </labels>
     </source>
 
-    # Ignore fluentd own events
-#    <match fluent.**>
-#      @type null
-#    </match>
 
     # TCP input to receive logs from the forwarders
     <source>
@@ -57,11 +53,6 @@ data:
         time_format %Y-%m-%dT%H:%M:%S.%NZ
       </parse>
     </source> 
-
-    # Throw the healthcheck to the standard output instead of forwarding it
-#    <match fluentd.healthcheck>
-#      @type stdout
-#    </match>
 
     # Send the logs to the standard output
     # note: we are using elasticsearch in "elastic-system" namespace
