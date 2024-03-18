@@ -10,6 +10,7 @@ data:
     aggregator:
       configMap: elasticsearch-output
       extraEnvVar: 
+        #these do not seem to work
         - name: ELASTICSEARCH_HOST
           value: elastic-elasticsearch.elastic-system
         - name: ELASTICSEARCH_PORT
