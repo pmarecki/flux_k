@@ -46,6 +46,18 @@ data:
       bind 0.0.0.0
       port 9880
     </source>
+    
+    <source>
+      @type tail      
+      path /var/log/containers/default*.log
+      pos_file /var/log/app.log.pos      
+      tag kubernetes.*
+      read_from_head true
+      <parse>
+        @type none
+        time_format %Y-%m-%dT%H:%M:%S.%NZ
+      </parse>
+    </source> 
 
     # Throw the healthcheck to the standard output instead of forwarding it
     <match fluentd.healthcheck>
