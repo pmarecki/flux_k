@@ -29,9 +29,9 @@ data:
     </source>
 
     # Ignore fluentd own events
-    <match fluent.**>
-      @type null
-    </match>
+#    <match fluent.**>
+#      @type null
+#    </match>
 
     # TCP input to receive logs from the forwarders
     <source>
