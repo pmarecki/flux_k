@@ -45,7 +45,7 @@ data:
     
     <source>
       @type tail      
-      path /var/log/containers/default*.log
+      path /var/log/containers/*
       tag kubernetes.*
       read_from_head true
       <parse>
