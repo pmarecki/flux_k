@@ -59,9 +59,9 @@ data:
     </source> 
 
     # Throw the healthcheck to the standard output instead of forwarding it
-    <match fluentd.healthcheck>
-      @type stdout
-    </match>
+#    <match fluentd.healthcheck>
+#      @type stdout
+#    </match>
 
     # Send the logs to the standard output
     # note: we are using elasticsearch in "elastic-system" namespace
