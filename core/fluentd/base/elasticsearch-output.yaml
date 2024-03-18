@@ -50,7 +50,7 @@ data:
     <source>
       @type tail      
       path /var/log/containers/default*.log
-      pos_file /var/log/app.log.pos      
+#      pos_file /var/log/app.log.pos
       tag kubernetes.*
       read_from_head true
       <parse>
