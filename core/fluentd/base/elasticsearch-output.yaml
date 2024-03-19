@@ -5,31 +5,7 @@ metadata:
   namespace: fluentd
 data:
   fluentd.conf: |
-    # Prometheus Exporter Plugin
-    # input plugin that exports metrics
-    <source>
-      @type prometheus
-      port 24231
-    </source>
-
-    # input plugin that collects metrics from MonitorAgent
-    <source>
-      @type prometheus_monitor
-      <labels>
-        host ${hostname}
-      </labels>
-    </source>
-
-    # input plugin that collects metrics for output plugin
-    <source>
-      @type prometheus_output_monitor
-      <labels>
-        host ${hostname}
-      </labels>
-    </source>
-
-
-    # TCP input to receive logs from the forwarders
+   # TCP input to receive logs from the forwarders
     <source>
       @type forward
       bind 0.0.0.0
@@ -46,7 +22,7 @@ data:
     <source>
       @type tail      
       path /var/log/pods/*
-      tag kubernetes.*
+      tag kubernetes
       read_from_head true
       <parse>
         @type none
@@ -54,8 +30,6 @@ data:
       </parse>
     </source> 
 
-    # Send the logs to the standard output
-    # note: we are using elasticsearch in "elastic-system" namespace
     <match **>
       @type elasticsearch
       include_tag_key true
@@ -65,6 +39,7 @@ data:
       user elastic
       password ts2PwaAo60hPPnEx
       logstash_format true
+      logstash_prefix xxx
     
       ssl_verify false
       ssl_version TLSv1_2
