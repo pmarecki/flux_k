@@ -5,14 +5,12 @@ metadata:
   namespace: fluentd
 data:
   fluentd.conf: |
-   # TCP input to receive logs from the forwarders
     <source>
       @type forward
       bind 0.0.0.0
       port 24224
     </source>
 
-    # HTTP input for the liveness and readiness probes
     <source>
       @type http
       bind 0.0.0.0

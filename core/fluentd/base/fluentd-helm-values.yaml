@@ -9,6 +9,8 @@ data:
       storageClass: nfs
     aggregator:
       configMap: elasticsearch-output
+      extraGems:
+        - cri
       extraEnvVars: 
         #these do not seem to work
         - name: ELASTICSEARCH_HOST
