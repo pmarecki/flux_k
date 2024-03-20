@@ -9,16 +9,12 @@ data:
       storageClass: nfs
     aggregator:
       configMap: elasticsearch-output
-      #      extraGems:
-      #        - cri
       extraEnvVars: 
         #these do not seem to work
         - name: ELASTICSEARCH_HOST
           value: elastic-elasticsearch.elastic-system
         - name: ELASTICSEARCH_PORT
           value: 9200
-        - name: UUSER
-          value: kadabra
 
 
 
