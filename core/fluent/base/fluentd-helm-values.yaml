@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd-helm-values
+  namespace: fluentd
+data:
+  values.yaml: |
+    config:
+      outputs: |
+        [OUTPUT]
+            Name es
+            Match kube.*
+            Host elastic-elasticsearch.elastic-system
+            Port 9200
+            HTTP_User       elastic
+            HTTP_Passwd     ts2PwaAo60hPPnEx
+            Logstash_Format On
+            Logstash_Prefix yyyy
+            Retry_Limit False
+            tls On
+            tls.verify Off
+    
+        [OUTPUT]
+            Name es
+            Match host.*
+            Host elastic-elasticsearch.elastic-system
+            Port 9200
+            HTTP_User       elastic
+            HTTP_Passwd     ts2PwaAo60hPPnEx
+            Logstash_Format On
+            Logstash_Prefix yyyy-node
+            Retry_Limit False
+            tls On
+            tls.verify Off
+
+
+
+
