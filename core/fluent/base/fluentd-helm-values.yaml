@@ -18,6 +18,7 @@ data:
             Logstash_Prefix yyyy
             Suppress_Type_Name On
             Replace_Dots On
+            Type _doc
             Retry_Limit False
             tls On
             tls.verify Off
@@ -33,6 +34,7 @@ data:
             Logstash_Prefix yyyy-node
             Suppress_Type_Name On
             Replace_Dots On
+            Type _doc
             Retry_Limit False
             tls On
             tls.verify Off
