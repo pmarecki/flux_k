@@ -16,6 +16,7 @@ data:
             HTTP_Passwd     ts2PwaAo60hPPnEx
             Logstash_Format On
             Logstash_Prefix yyyy
+            Suppress_Type_Name On
             Retry_Limit False
             tls On
             tls.verify Off
@@ -29,6 +30,7 @@ data:
             HTTP_Passwd     ts2PwaAo60hPPnEx
             Logstash_Format On
             Logstash_Prefix yyyy-node
+            Suppress_Type_Name On
             Retry_Limit False
             tls On
             tls.verify Off
