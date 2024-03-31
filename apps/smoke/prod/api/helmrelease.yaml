@@ -21,7 +21,7 @@ spec:
         repository: wsiz/smoke
         tag: 0.1.1
       service:
-        targetPort: 80
+        targetPort: 5000
     certificate:
       commonName: "smoke.wsi.edu.pl"
       issuer:
