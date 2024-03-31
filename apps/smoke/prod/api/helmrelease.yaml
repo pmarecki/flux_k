@@ -18,8 +18,8 @@ spec:
     app:
       replicas: 2
       image:
-        repository: nginx
-        tag: 1-alpine
+        repository: wsiz/smoke
+        tag: 0.1.1
       service:
         targetPort: 80
     certificate:
