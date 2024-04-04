@@ -12,25 +12,6 @@ spec:
   targetNamespace: elastic-system
   path: ./core/elasticsearch/base/
 
-#  patches:
-#    - patch: |-
-#        - op: replace
-#          path: /data/values.yaml
-#          value: |-
-#            installCRDs: true
-#
-##            prometheus:
-##              enabled: true
-##              servicemonitor:
-##                enabled: true
-##                labels:
-##                  release: prometheus-stack
-#
-#      target:
-#        kind: ConfigMap
-#        name: cm-helm-values
-#        namespace: cert-manager
-
   sourceRef:
     kind: GitRepository
     name: flux-system
