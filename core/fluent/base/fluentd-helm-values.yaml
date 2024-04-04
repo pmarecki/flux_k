@@ -33,6 +33,7 @@ data:
             Match kube.*smoke*
             Key_Name log
             Parser loguru
+            Reserve_Data On
 
       outputs: |
         [OUTPUT]
