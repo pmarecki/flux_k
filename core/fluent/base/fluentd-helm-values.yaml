@@ -29,7 +29,7 @@ data:
             K8S-Logging.Exclude On
         
         [FILTER]
-            Name pythonapp
+            Name parser
             Match kube.*smoke*
             Key_Name log
             Parser docker_no_time
