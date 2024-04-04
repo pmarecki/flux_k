@@ -8,11 +8,15 @@ data:
     config:
       customParsers: |
         [PARSER]
-            Name docker_no_timex
+            Name docker_no_time
             Format json
             Time_Keep Off
             Time_Key time
             Time_Format %Y-%m-%dT%H:%M:%S.%L
+        [PARSER]
+            Name loguru
+            Format regex
+            Regex ^(?<atimestamp>[^\|]+) \| (?<loglevel>[^ ]+) *. (?<file>[^:]+):(?<function>[^:]+):(?<line>[^ ]+) - (?<msg>.+)$
       filters: |
         [FILTER]
             Name kubernetes
@@ -21,6 +25,13 @@ data:
             Keep_Log Off
             K8S-Logging.Parser On
             K8S-Logging.Exclude On
+        
+        [FILTER]
+            Name python
+            Match kube.*smoke*
+            Key_Name log
+            Parser loguru
+
       outputs: |
         [OUTPUT]
             Name es
