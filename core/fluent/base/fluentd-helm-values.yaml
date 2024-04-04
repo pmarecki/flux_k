@@ -11,7 +11,7 @@ data:
             Name kubernetes
             Match kube.*
             Merge_Log On
-            Keep_Log Off
+            Keep_Log On
             K8S-Logging.Parser On
             K8S-Logging.Exclude On
       outputs: |
