@@ -6,12 +6,19 @@ metadata:
 data:
   values.yaml: |
     config:
+      customParsers: |
+        [PARSER]
+            Name docker_no_timex
+            Format json
+            Time_Keep Off
+            Time_Key time
+            Time_Format %Y-%m-%dT%H:%M:%S.%L
       filters: |
         [FILTER]
             Name kubernetes
             Match kube.*
             Merge_Log On
-            Keep_Log On
+            Keep_Log Off
             K8S-Logging.Parser On
             K8S-Logging.Exclude On
       outputs: |
