@@ -32,7 +32,7 @@ data:
             Name pythonapp
             Match kube.*smoke*
             Key_Name log
-            Parser loguru
+            Parser docker_no_time
 
       outputs: |
         [OUTPUT]
