@@ -13,10 +13,12 @@ data:
             Time_Keep Off
             Time_Key time
             Time_Format %Y-%m-%dT%H:%M:%S.%L
+    
         [PARSER]
             Name loguru
             Format regex
             Regex ^(?<atimestamp>[^\|]+) \| (?<loglevel>[^ ]+) *. (?<file>[^:]+):(?<function>[^:]+):(?<line>[^ ]+) - (?<msg>.+)$
+
       filters: |
         [FILTER]
             Name kubernetes
