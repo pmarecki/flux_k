@@ -41,8 +41,8 @@ data:
             Match kube.*
             Host elastic-elasticsearch.elastic-system
             Port 9200
-            HTTP_User       elastic
-            HTTP_Passwd     ts2PwaAo60hPPnEx
+            HTTP_User       fluent1
+            HTTP_Passwd     vJ6JY39yakjt
             Logstash_Format On
             Logstash_Prefix yyyy
             Suppress_Type_Name On
@@ -57,8 +57,8 @@ data:
             Match host.*
             Host elastic-elasticsearch.elastic-system
             Port 9200
-            HTTP_User       elastic
-            HTTP_Passwd     ts2PwaAo60hPPnEx
+            HTTP_User       fluent1
+            HTTP_Passwd     vJ6JY39yakjt
             Logstash_Format On
             Logstash_Prefix yyyy-node
             Suppress_Type_Name On
