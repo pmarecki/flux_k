@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kibana-route
+  namespace: elastic-system
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`kibana-test.wsi.edu.pl`)
+      kind: Rule
+
+      services:
+        - name: elastic-kibana
+          port: 5601
+  tls:
+    secretName: tls-cert
