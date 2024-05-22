@@ -19,7 +19,7 @@ spec:
       replicas: 1
       image:
         repository: wsiz/sentinel
-        tag: 0.1.1
+        tag: 0.1.2
         env:
           - name: "DISCORD_WEBHOOK"
             value: "https://discord.com/api/webhooks/1022910338787725313/Y6Rlh9d_ZMw75TKBiAoAKI3tcuiDZzgDrtNQwiBt6JgH6YeDelY_YoKJvqIqazpwpR8n"
@@ -35,6 +35,8 @@ spec:
             value: "10"
       service:
         targetPort: 5000
+      hpa:
+        enabled: false
     certificate:
       commonName: "sentinel.wsi.edu.pl"
       issuer:
