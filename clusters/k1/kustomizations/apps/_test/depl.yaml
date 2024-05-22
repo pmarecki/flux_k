@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: test-nginx
   namespace: test
+  # this is a trivial deployment to check if flux and kustomizations work
 spec:
   replicas: 1
   selector:
