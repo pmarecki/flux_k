@@ -23,4 +23,5 @@ spec:
           dnsNames:
             - "khabib.wsi.edu.pl"
             - "smoke.wsi.edu.pl"
+            - "sentinel.wsi.edu.pl"
             - "kibana-test.wsi.edu.pl"

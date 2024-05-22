@@ -1,0 +1,49 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: smoke-api
+  namespace: smoke
+spec:
+  interval: 15m
+  timeout: 1m
+  chart:
+    spec:
+      chart: app-chart
+      version: 1.0.11
+      sourceRef:
+        kind: HelmRepository
+        name: harbor
+        namespace: flux-system
+  values:
+    app:
+      replicas: 1
+      image:
+        repository: wsiz/sentinel
+        tag: 0.1.1
+        env:
+          - name: "DISCORD_WEBHOOK"
+            value: "https://discord.com/api/webhooks/1022910338787725313/Y6Rlh9d_ZMw75TKBiAoAKI3tcuiDZzgDrtNQwiBt6JgH6YeDelY_YoKJvqIqazpwpR8n"
+          - name: "CRITICAL_GROUP_ID"
+            value: "1022914607129575424"
+          - name: "URLS"
+            value: "https://doha.wsi.edu.pl&&https://doha.wsi.edu.pl:10005&&https://guam.wsi.edu.pl&&https://guam.wsi.edu.pl:1111&&https://basra.wsi.edu.pl&&https://cdn.wsi.edu.pl&&https://denver.wsi.edu.pl:8443&&https://sm-proxy.wsi.edu.pl&&https://reg.wsi.edu.pl"
+          - name: "AVAILABILITY_INTERVAL_HOURS"
+            value: "0.25"
+          - name: "CERT_CHECK_HOURS"
+            value: "24"
+          - name: "DAYS_CERT_WARN"
+            value: "10"
+      service:
+        targetPort: 5000
+    certificate:
+      commonName: "sentinel.wsi.edu.pl"
+      issuer:
+        name: letsencrypt-prod
+        kind: ClusterIssuer
+    ingressRoute:
+      domain: sentinel.wsi.edu.pl
+      middlewares:
+        - name: headers-middleware
+        - name: ratelimit-middleware
+    database:
+      enabled: false
