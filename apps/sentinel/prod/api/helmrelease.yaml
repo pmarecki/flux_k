@@ -19,7 +19,7 @@ spec:
       replicas: 1
       image:
         repository: wsiz/sentinel
-        tag: 0.1.2
+        tag: 0.2.0
         env:
           - name: "DISCORD_WEBHOOK"
             value: "https://discord.com/api/webhooks/1022910338787725313/Y6Rlh9d_ZMw75TKBiAoAKI3tcuiDZzgDrtNQwiBt6JgH6YeDelY_YoKJvqIqazpwpR8n"
@@ -27,6 +27,8 @@ spec:
             value: "1022914607129575424"
           - name: "URLS"
             value: "https://doha.wsi.edu.pl&&https://doha.wsi.edu.pl:10005&&https://guam.wsi.edu.pl&&https://guam.wsi.edu.pl:1111&&https://basra.wsi.edu.pl&&https://cdn.wsi.edu.pl&&https://denver.wsi.edu.pl:8443&&https://sm-proxy.wsi.edu.pl&&https://reg.wsi.edu.pl&&https://gun-club-api.m87.tech&&https://sylabus-api.wsi.edu.pl"
+          - name: "APIS"
+            value: "https://gun-club-api.m87.tech/api/v1/health&&https://storage-api.m87.tech/api/v1/status&&https://sylabus-api.wsi.edu.pl/api/v1/health&& https://bootcamps-api.wsi.edu.pl/api/v1/health"
           - name: "AVAILABILITY_INTERVAL_HOURS"
             value: "0.25"
           - name: "CERT_CHECK_HOURS"
