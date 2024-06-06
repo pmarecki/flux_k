@@ -28,7 +28,7 @@ spec:
           - name: "URLS"
             value: "https://doha.wsi.edu.pl&&https://doha.wsi.edu.pl:10005&&https://guam.wsi.edu.pl&&https://guam.wsi.edu.pl:1111&&https://basra.wsi.edu.pl&&https://cdn.wsi.edu.pl&&https://denver.wsi.edu.pl:8443&&https://sm-proxy.wsi.edu.pl&&https://reg.wsi.edu.pl&&https://gun-club-api.m87.tech&&https://sylabus-api.wsi.edu.pl"
           - name: "APIS"
-            value: "https://gun-club-api.m87.tech/api/v1/health&&https://storage-api.m87.tech/api/v1/status&&https://sylabus-api.wsi.edu.pl/api/v1/health&& https://bootcamps-api.wsi.edu.pl/api/v1/health"
+            value: "https://gun-club-api.m87.tech/api/v1/health&&https://storage-api.m87.tech/api/v1/status&&https://sylabus-api.wsi.edu.pl/api/v1/health&&https://bootcamps-api.wsi.edu.pl/api/v1/health&&https://admissions-api.wsi.edu.pl/api/v1/health"
           - name: "AVAILABILITY_INTERVAL_HOURS"
             value: "0.25"
           - name: "CERT_CHECK_HOURS"
